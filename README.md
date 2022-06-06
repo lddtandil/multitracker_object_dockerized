@@ -7,6 +7,11 @@ follow also given by parameter, and then iterates for each frame of the video, u
 Once the trackers are updated, the current position is obtained, the rectangles are drawn and the frame is stored in the
 output video. 
 Terminates when it cannot receive a frame, releasing the allocated resources
+
+***
+
+[![Watch the video](https://img.youtube.com/vi/uoxC7VEnVZY/maxresdefault.jpg)](https://www.youtube.com/watch?v=uoxC7VEnVZY)
+
 ***
 ### Prerequisities
 

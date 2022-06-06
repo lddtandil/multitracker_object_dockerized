@@ -39,7 +39,7 @@ def main():
     input_video = os.path.realpath(path + '/input_data/' + sys.argv[1])
     output_video = os.path.realpath(path + '/output_data/' + str(time.time_ns()) + ".mkv")
     if not os.path.exists(input_video):
-        logging.error("Sorry, ", sys.argv[1], " was not found in input_data folder")
+        logging.error("Sorry, " + str(sys.argv[1]) + " was not found in input_data folder")
         return
 
 

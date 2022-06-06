@@ -31,6 +31,7 @@ In order to run this container you'll need docker and docker-compose installed.
 * The resulting video will be in: ./output_data
   * **Note:** By default the resulting video will have a '.mkv' extension 
 
+* Copy .env-example to .env (replace the values if you need)
 ```shell
  docker-compose build && docker-compose up
 ```

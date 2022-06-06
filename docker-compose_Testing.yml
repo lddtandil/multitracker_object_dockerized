@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  multitracker_detector:
+    build: 
+        context: .
+        dockerfile: ./Dockerfile_Testing
+    volumes:
+      - ./output_data:/code/output_data
+      - ./input_data:/code/input_data
+    environment:
+      # Name of input video file
+      - VIDEO_NAME=$VIDEO_NAME
+      # Name of the JSON file, which indicates the location of the objects to follow
+      - JSON_NAME=$JSON_NAME
+      # OpenCV object tracker type
+      - TRACKER_NAME=$TRACKER_NAME

@@ -1,0 +1,21 @@
+#First Stage
+FROM python:3.8 AS builder
+MAINTAINER Leonardo Daniel Dominguez "leonardodanieldominguez@gmail.com"
+ENV TZ "America/Argentina/Buenos_Aires"
+COPY requirements.txt .
+
+RUN pip install --upgrade pip --user -r  requirements.txt
+
+#Seconds Stage
+FROM python:3.8-slim
+WORKDIR /code
+#Libglib2.0-0 is not included in slim images
+RUN apt update && apt-get install -y libglib2.0-0 
+#Copy the builder installation dependencies
+COPY --from=builder /root/.local /root/.local
+COPY ./src .
+
+ENV PATH=/root/.local:$PATH
+
+CMD ["sh", "-c", "python ./Test.py"]
+
